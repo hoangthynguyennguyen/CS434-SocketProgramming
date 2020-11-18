@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #86C4DE;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Group layoutX="-32.0" layoutY="20.0">
+         <children>
+            <Text fill="WHITE" layoutX="246.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login" translateX="1.0" translateY="-5.0">
+               <font>
+                  <Font name="Josefin Sans Bold" size="60.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="251.0" layoutY="84.0" stroke="BLACK" strokeType="OUTSIDE" text="Login">
+               <font>
+                  <Font name="Josefin Sans" size="60.0" />
+               </font>
+            </Text>
+         </children>
+      </Group>
+      <TextField layoutX="73.0" layoutY="153.0" prefHeight="72.0" prefWidth="454.0" style="-fx-background-color: #EBCF6B;" text="Nickname">
+         <font>
+            <Font name="Josefin Sans Bold" size="26.0" />
+         </font>
+      </TextField>
+      <Group>
+         <children>
+            <Button layoutX="221.0" layoutY="319.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="128.0" style="-fx-background-color: #FFFFFF;" text="Play" textAlignment="CENTER" textFill="#ef5050">
+               <font>
+                  <Font name="Nunito Sans SemiBold" size="20.0" />
+               </font>
+            </Button>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="48.0" layoutX="230.0" layoutY="311.0" opacity="0.35" stroke="#ef5050" strokeType="INSIDE" width="128.0" />
+         </children>
+      </Group>
+      <ImageView fitHeight="72.0" fitWidth="79.0" layoutX="14.0" layoutY="348.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/re.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="90.0" fitWidth="136.0" layoutX="502.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/topright.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="60.0" fitWidth="57.0" layoutX="398.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/thoi.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="62.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/topleft.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="79.0" fitWidth="174.0" layoutX="398.0" layoutY="320.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/botright.png" />
+         </image>
+      </ImageView>
+      <Text fill="#ef5050" layoutX="73.0" layoutY="254.0" strokeType="OUTSIDE" strokeWidth="0.0" text="*Choose another nickname">
+         <font>
+            <Font name="Nunito Sans SemiBold" size="15.0" />
+         </font>
+      </Text>
+      <Text fill="#ef5050" layoutX="73.0" layoutY="283.0" strokeType="OUTSIDE" strokeWidth="0.0" text="*The nickname field is required">
+         <font>
+            <Font name="Nunito Sans SemiBold" size="15.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>
