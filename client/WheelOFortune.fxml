@@ -8,7 +8,7 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.Controller">
    <children>
       <Circle fill="WHITE" layoutX="466.0" layoutY="-55.0" radius="45.0" stroke="#de8282" strokeType="INSIDE" strokeWidth="10.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#a2de86" height="44.0" layoutX="443.0" layoutY="36.0" rotate="130.0" stroke="#a2de86" strokeType="INSIDE" width="46.0" />
@@ -63,10 +63,13 @@
             <Image url="@../Images/s.png" />
          </image>
       </ImageView>
-      <Button layoutX="209.0" layoutY="242.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="166.0" style="-fx-background-color: #ef5050;" text="Play" textAlignment="CENTER" textFill="WHITE">
+      <Button layoutX="209.0" layoutY="242.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="166.0" style="-fx-background-color: #ef5050;" text="Register" textAlignment="CENTER" textFill="WHITE" onAction="#goToRegisterScene">
          <font>
             <Font name="Nunito Sans SemiBold" size="25.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="54.0" layoutX="225.0" layoutY="231.0" opacity="0.33" stroke="BLACK" strokeType="INSIDE" translateX="-8.0" translateY="3.0" width="166.0" />
       <Circle fill="#86c4de" layoutX="90.0" layoutY="183.0" radius="22.0" stroke="#86c4de" strokeType="INSIDE" translateX="-3.0" />
@@ -90,10 +93,13 @@
             <Image url="@../Images/f.png" />
          </image>
       </ImageView>
-      <Text layoutX="248.0" layoutY="318.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rules" translateX="3.0" translateY="3.0">
+      <Button layoutX="248.0" layoutY="318.0" text="Rules" translateX="3.0" translateY="3.0" onAction="#goToRulesScene" style="-fx-background-color: transparent;">
          <font>
             <Font name="Nunito Sans SemiBold" size="25.0" />
          </font>
-      </Text>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
    </children>
 </AnchorPane>
