@@ -5,7 +5,7 @@
 <?import javafx.scene.text.*?>
 
 <?import javafx.scene.control.Button?>
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #DE8686;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #DE8686;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.HowToPlayController">
    <children>
       <Text layoutX="148.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="How to play" textAlignment="CENTER">
          <font>
@@ -42,7 +42,7 @@
             <Image url="@../Images/c.png" />
          </image>
       </ImageView>
-      <Button textFill="WHITE" layoutX="450.0" layoutY="300.0" text="Next" onAction="#goToRuleContScene"  style="-fx-background-color: transparent;">
+      <Button textFill="WHITE" layoutX="450.0" layoutY="300.0" text="Next" onAction="#backToMenu"  style="-fx-background-color: transparent;">
          <font>
             <Font name="Josefin Sans Bold" size="48.0" />
          </font>

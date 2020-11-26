@@ -8,7 +8,7 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.MenuController">
    <children>
       <Circle fill="WHITE" layoutX="466.0" layoutY="-55.0" radius="45.0" stroke="#de8282" strokeType="INSIDE" strokeWidth="10.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#a2de86" height="44.0" layoutX="443.0" layoutY="36.0" rotate="130.0" stroke="#a2de86" strokeType="INSIDE" width="46.0" />
@@ -63,7 +63,7 @@
             <Image url="@../Images/s.png" />
          </image>
       </ImageView>
-      <Button layoutX="209.0" layoutY="242.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="166.0" style="-fx-background-color: #ef5050;" text="Register" textAlignment="CENTER" textFill="WHITE" onAction="#goToRegisterScene">
+      <Button layoutX="209.0" layoutY="242.0" mnemonicParsing="false" onAction="#registerAction" prefHeight="54.0" prefWidth="166.0" style="-fx-background-color: #ef5050;" text="Register" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="Nunito Sans SemiBold" size="25.0" />
          </font>
@@ -93,7 +93,7 @@
             <Image url="@../Images/f.png" />
          </image>
       </ImageView>
-      <Button layoutX="248.0" layoutY="318.0" text="Rules" translateX="3.0" translateY="3.0" onAction="#goToRulesScene" style="-fx-background-color: transparent;">
+      <Button layoutX="248.0" layoutY="318.0" onAction="#howToPlayAction" style="-fx-background-color: transparent;" text="Rules" translateX="3.0" translateY="3.0">
          <font>
             <Font name="Nunito Sans SemiBold" size="25.0" />
          </font>

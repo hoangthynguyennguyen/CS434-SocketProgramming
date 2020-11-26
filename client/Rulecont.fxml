@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
-<?import javafx.scene.text.*?>
-<?import java.lang.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<?import javafx.scene.control.Button?>
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #DE8686;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #DE8686;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.Controller">
    <children>
       <Text layoutX="138.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="How to play">
          <font>
@@ -63,7 +62,7 @@
             <Font name="Nunito Sans SemiBold" size="20.0" />
          </font>
       </Text>
-      <Button textFill="WHITE" layoutX="425.0" layoutY="320.0" text="Menu" onAction="#goToMenuScene" style="-fx-background-color: transparent;">
+      <Button layoutX="425.0" layoutY="320.0" onAction="#goToMenuScene" style="-fx-background-color: transparent;" text="Back">
          <font>
             <Font name="Josefin Sans Bold" size="48.0" />
          </font>

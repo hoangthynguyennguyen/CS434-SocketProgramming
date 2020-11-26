@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.image.*?>
 <?import javafx.scene.*?>
-<?import javafx.scene.shape.*?>
 <?import javafx.scene.control.*?>
-<?import javafx.scene.text.*?>
-<?import java.lang.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.ButtonBase?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #86C4DE;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.Controller">
+<AnchorPane
+            maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #86C4DE;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.RegisterController">
    <children>
       <Group layoutX="-32.0" layoutY="20.0">
          <children>
@@ -24,14 +25,14 @@
             </Text>
          </children>
       </Group>
-      <TextField layoutX="73.0" layoutY="153.0" prefHeight="72.0" prefWidth="454.0" style="-fx-background-color: #EBCF6B;" text="Nickname">
+      <TextField fx:id="nameField" layoutX="73.0" layoutY="153.0" prefHeight="72.0" prefWidth="454.0" style="-fx-background-color: #EBCF6B;" text="Nickname">
          <font>
             <Font name="Josefin Sans Bold" size="26.0" />
          </font>
       </TextField>
       <Group>
          <children>
-            <Button layoutX="221.0" layoutY="319.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="128.0" style="-fx-background-color: #FFFFFF;" text="Play" textAlignment="CENTER" textFill="#ef5050" onAction="#goToGameScene">
+            <Button fx:id="submitButton" layoutX="221.0" layoutY="319.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" prefHeight="33.0" prefWidth="128.0" style="-fx-background-color: #FFFFFF;" text="Play" textAlignment="CENTER" textFill="#ef5050">
                <font>
                   <Font name="Nunito Sans SemiBold" size="20.0" />
                </font>
@@ -67,12 +68,12 @@
             <Image url="@../Images/botright.png" />
          </image>
       </ImageView>
-      <Text fill="#ef5050" layoutX="73.0" layoutY="254.0" strokeType="OUTSIDE" strokeWidth="0.0" text="*Choose another nickname">
+      <Text fill="#ef5050" layoutX="73.0" layoutY="254.0" strokeType="OUTSIDE" strokeWidth="0.0">
          <font>
             <Font name="Nunito Sans SemiBold" size="15.0" />
          </font>
       </Text>
-      <Text fill="#ef5050" layoutX="73.0" layoutY="283.0" strokeType="OUTSIDE" strokeWidth="0.0" text="*The nickname field is required">
+      <Text fill="#ef5050" layoutX="73.0" layoutY="283.0" strokeType="OUTSIDE" strokeWidth="0.0">
          <font>
             <Font name="Nunito Sans SemiBold" size="15.0" />
          </font>
