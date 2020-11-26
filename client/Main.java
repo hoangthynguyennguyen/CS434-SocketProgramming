@@ -52,19 +52,33 @@ package client;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 public class Main extends Application{
     private double x,y;
-    private static void main (String[] args){launch(args);}
+     public static void main (String[] args){
+         launch(args);
+     }
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        FXMLLoader loader= new FXMLLoader(getClass().getResource("WheelOfFortune.fxml"));
-        AnchorPane rootStackPane  = loader.load();
+        FXMLLoader loader= new FXMLLoader(getClass().getResource("rootScreen.fxml"));
+        StackPane rootStackPane  = loader.load();
         Scene scene = new Scene(rootStackPane);
         primaryStage.setScene(scene);
+        primaryStage.setHeight(400);
+        primaryStage.setWidth(600);
+        primaryStage.initStyle(StageStyle.UNDECORATED);
+
+        try{
+            System.out.println("Success!!!");
+        }
+        catch(Exception e){
+            System.out.println("Failed!!!");
+        }
+
 
         rootStackPane.setOnMousePressed(mouseEvent -> {
             x= mouseEvent.getSceneX();
@@ -80,3 +94,5 @@ public class Main extends Application{
 
 
 }
+
+
