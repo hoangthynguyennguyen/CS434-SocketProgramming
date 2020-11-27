@@ -14,11 +14,20 @@ public class RootController {
     public void initialize() throws IOException {
         loadMenuScreen();
     }
+    @FXML
     public void loadMenuScreen() throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("WheelOfFortune.fxml"));
         Pane pane = loader.load();
         MenuController menuController = loader.getController();
         menuController.setRootController(this);
+        setScreen(pane);
+    }
+    @FXML
+    public void getRuleContScene() throws IOException{
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Rulecont.fxml"));
+        Pane pane = loader.load();
+        HowToPlayController howToPlayController = loader.getController();
+        howToPlayController.setRootController(this);
         setScreen(pane);
     }
 

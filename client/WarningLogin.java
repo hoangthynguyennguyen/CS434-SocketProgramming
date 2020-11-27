@@ -2,16 +2,18 @@ package client;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.stage.Stage;
 
 public class
 WarningLogin {
     @FXML
-    private Button warningLoginButton;
+    private Button warningCloseButton;
 
-//    private void confirmOnAction(){
-//         RegisterController.setWarningStage((Stage) warningLoginButton.getScene().getWindow());
-//         RegisterController.getWarningStage().close();
-//
-//    }
+    @FXML
+    private void confirmOnAction(){
+         RegisterController.setWarningStage((Stage) warningCloseButton.getScene().getWindow());
+         RegisterController.getWarningStage().close();
+
+    }
 
 }

@@ -54,7 +54,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
 public class Main extends Application{
     private double x,y;
@@ -70,7 +69,7 @@ public class Main extends Application{
         primaryStage.setScene(scene);
         primaryStage.setHeight(400);
         primaryStage.setWidth(600);
-        primaryStage.initStyle(StageStyle.UNDECORATED);
+
 
         try{
             System.out.println("Success!!!");

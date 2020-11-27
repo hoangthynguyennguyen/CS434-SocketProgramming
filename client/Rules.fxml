@@ -42,7 +42,7 @@
             <Image url="@../Images/c.png" />
          </image>
       </ImageView>
-      <Button textFill="WHITE" layoutX="450.0" layoutY="300.0" text="Next" onAction="#backToMenu"  style="-fx-background-color: transparent;">
+      <Button textFill="WHITE" layoutX="450.0" layoutY="300.0" text="Next" onAction="#getRuleCont"  style="-fx-background-color: transparent;">
          <font>
             <Font name="Josefin Sans Bold" size="48.0" />
          </font>

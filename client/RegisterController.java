@@ -2,48 +2,70 @@ package client;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import javafx.stage.Window;
 
-public class RegisterController  {
-    private RootController rootController;
+import java.io.IOException;
 
+public class RegisterController {
+    private RootController rootController;
 
 
     @FXML
     private TextField nameField;
     @FXML
     private Button submitButton;
+    private static Stage warningStage;
+    private boolean checkWarning = false;
 
 
+    public static Stage getWarningStage() {
+        return warningStage;
+    }
 
-//    @Override
-//    public void start (Stage primaryStage) throws IOException{
-//        Parent root = FXMLLoader.load(getClass().getResource("register.fxml"));
-//        primaryStage.setTitle("Registration Form ");
-//       primaryStage.setScene(new Scene(root, 600,400));
-//        handleSubmitButtonAction();
-//        primaryStage.show();
-//
-//    }
+    public static void setWarningStage(Stage warningStage) {
+        RegisterController.warningStage = warningStage;
+    }
 
     @FXML
-    protected void handleSubmitButtonAction(ActionEvent event) {
+    protected void handleSubmitButtonAction(ActionEvent event) throws IOException {
         Window owner = submitButton.getScene().getWindow();
-        if(nameField.getText().isEmpty()){
-            AlertHelper(Alert.AlertType.ERROR, owner, "Form error","Name is required");
+
+        // another options is user choose a duplicate nickname
+
+        if (nameField.getText().isEmpty()) {
+            AlertHelper(Alert.AlertType.ERROR, owner, "Form error", "Name is required");
             return;
         }
-        if(!nameField.getText().matches("[0-9]")){
-            AlertHelper(Alert.AlertType.ERROR, owner, "Form error","NameField is require");
+        //Maximum 10 characters, at least one uppercase letter,
+        // one lowercase letter, one number and one special character
+        if (nameField.getText().matches("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[_])[A-Za-z\\d_]{1,10}$")) {
+            if (!checkWarning) {
+                checkWarning = true;
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("WarningLogin.fxml"));
+                Scene scene = new Scene(loader.load());
+                warningStage = new Stage();
+                warningStage.setScene(scene);
+                warningStage.initStyle(StageStyle.UNDECORATED);
+//                warningStage.initModality(Modality.APPLICATION_MODAL);
+                warningStage.showAndWait();
+            }
+            rootController.loadMenuScreen();
+        } else {
+            AlertHelper(Alert.AlertType.ERROR, owner, "Form error", "NameField is required");
             return;
         }
 
 
     }
-    private void AlertHelper(Alert.AlertType alertType, Window owner, String title, String message){
+
+    private void AlertHelper(Alert.AlertType alertType, Window owner, String title, String message) {
         Alert alert = new Alert(alertType);
         alert.setTitle(title);
         alert.setHeaderText(null);
@@ -52,43 +74,11 @@ public class RegisterController  {
         alert.show();
 
     }
-//    public static void main(String[] args) {
-//        launch(args);
-//    }
+
+
     public void setRootController(RootController rootController) {
         this.rootController = rootController;
     }
 
-
-
-//
-//    @Override
-//    public void handle(KeyEvent keyEvent) {
-//        TextField nField = new TextField();
-//        TextFormatter<?> formatter = new TextFormatter<>(change -> {
-//            String newText = change.getControlNewText();
-//            return newText.matches("^(?=[a-zA-Z0-9._]{8,20}$)(?!.*[_.]{2})[^_.].*[^_.]$")?change:null;
-//        });
-//        nameField.setTextFormatter(formatter);
-//
-//
-//        final Label error = new Label("Name Field is require!");
-//        error.setVisible(false);
-//        nameField.addEventFilter(KeyEvent.KEY_TYPED, new EventHandler<KeyEvent> (){
-//            @Override
-//            public void handle(KeyEvent arg0) {
-//                if(arg0.getCharacter().matches("[0-9]")){
-//                    nameField.getStyleClass().add("error");
-//                    error.setVisible(true);
-//                    arg0.consume();
-//                }else{
-//                    error.setVisible(false);
-//                    nameField.getStyleClass().remove("error");
-//
-//                }
-//            }
-//        });
-//        Label n = new Label("Name");
-//    }
 
 }

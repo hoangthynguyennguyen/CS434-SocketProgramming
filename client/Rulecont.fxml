@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #DE8686;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #DE8686;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.HowToPlayController">
    <children>
       <Text layoutX="138.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="How to play">
          <font>
@@ -62,7 +62,7 @@
             <Font name="Nunito Sans SemiBold" size="20.0" />
          </font>
       </Text>
-      <Button layoutX="425.0" layoutY="320.0" onAction="#goToMenuScene" style="-fx-background-color: transparent;" text="Back">
+      <Button layoutX="425.0" layoutY="320.0" onAction="#backToMenu" style="-fx-background-color: transparent;" text="Back" textFill="WHITE">
          <font>
             <Font name="Josefin Sans Bold" size="48.0" />
          </font>

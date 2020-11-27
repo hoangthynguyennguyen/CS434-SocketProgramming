@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.text.*?>
-<?import java.lang.*?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="170.0" prefWidth="335.0" style="-fx-background-color: #A2DE86;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="170.0" prefWidth="335.0" style="-fx-background-color: #A2DE86;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.WarningLogin">
    <children>
       <Text fill="WHITE" layoutX="53.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Registration Completely" wrappingWidth="246.18002319335938">
          <font>
             <Font name="Josefin Sans Bold" size="25.0" />
          </font>
       </Text>
-      <Text fill="#de8282" layoutX="117.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Order: #1">
+      <Text layoutX="120.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Order: #1">
          <font>
             <Font name="Josefin Sans Bold" size="20.0" />
          </font>
       </Text>
+      <Button fx:id="warningCloseButton" layoutX="26.0" layoutY="129.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="48.0" onAction="#confirmOnAction" style="-fx-background-color: #CB6969;" text="OK" textFill="WHITE" translateX="110.0" />
    </children>
 </AnchorPane>

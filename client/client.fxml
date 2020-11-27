@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
 <?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #869FDE;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #869FDE;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Text fill="WHITE" layoutX="93.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="This is a question" textAlignment="CENTER">
          <font>
@@ -22,16 +22,6 @@
             <Rectangle arcHeight="30.0" arcWidth="30.0" fill="WHITE" height="67.0" layoutX="128.0" layoutY="109.0" stroke="#cb6969" strokeType="INSIDE" strokeWidth="3.0" width="66.0" />
             <Rectangle arcHeight="30.0" arcWidth="30.0" fill="WHITE" height="67.0" layoutX="392.0" layoutY="109.0" stroke="#cb6969" strokeType="INSIDE" strokeWidth="3.0" width="66.0" />
             <Rectangle arcHeight="30.0" arcWidth="30.0" fill="WHITE" height="67.0" layoutX="326.0" layoutY="109.0" stroke="#cb6969" strokeType="INSIDE" strokeWidth="3.0" width="66.0" />
-         </children>
-      </Group>
-      <Group>
-         <children>
-            <Rectangle arcHeight="30.0" arcWidth="30.0" fill="#ebcf6b" height="44.0" layoutX="241.0" layoutY="198.0" stroke="#ebcf6b" strokeType="INSIDE" strokeWidth="3.0" width="127.0" />
-            <Text fill="WHITE" layoutX="260.0" layoutY="227.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Guess now" textAlignment="CENTER">
-               <font>
-                  <Font name="Josefin Sans Bold" size="20.0" />
-               </font>
-            </Text>
          </children>
       </Group>
       <Group>
@@ -204,12 +194,12 @@
       </Group>
       <ImageView fitHeight="29.0" fitWidth="26.0" layoutX="342.0" layoutY="291.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@star.png" />
+            <Image url="@../Images/star.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="29.0" fitWidth="26.0" layoutX="342.0" layoutY="334.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@love.png" />
+            <Image url="@../Images/love.png" />
          </image>
       </ImageView>
       <Text fill="WHITE" layoutX="368.0" layoutY="311.0" strokeType="OUTSIDE" strokeWidth="0.0" text="100">
@@ -224,7 +214,7 @@
       </Text>
       <ImageView fitHeight="60.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@hint.png" />
+            <Image url="@../Images/hint.png" />
          </image>
       </ImageView>
       <Text fill="WHITE" layoutX="204.0" layoutY="368.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Z">
@@ -250,6 +240,16 @@
       <Text fill="WHITE" layoutX="155.0" layoutY="367.0" strokeType="OUTSIDE" strokeWidth="0.0" text="X">
          <font>
             <Font name="Nunito Sans Regular" size="19.0" />
+         </font>
+      </Text>
+      <Button layoutX="232.0" layoutY="200.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="136.0" style="-fx-background-color: #ebcf6b;" text="Guess now" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Josefin Sans Bold" size="20.0" />
+         </font>
+      </Button>
+      <Text fill="#cb6969" layoutX="529.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Time" wrappingWidth="56.00000000000003">
+         <font>
+            <Font name="Josefin Sans Bold" size="27.0" />
          </font>
       </Text>
    </children>
