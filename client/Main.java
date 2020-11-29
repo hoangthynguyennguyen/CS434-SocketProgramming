@@ -9,6 +9,7 @@ import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 public class Main extends Application {
+    public  static Game gameScene;
     private double x, y;
 
     public static void main(String[] args) {
@@ -23,6 +24,7 @@ public class Main extends Application {
         primaryStage.setScene(scene);
         primaryStage.setHeight(400);
         primaryStage.setWidth(600);
+        gameScene=new Game();
 
 
         try {

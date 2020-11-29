@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #869FDE;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Text fill="WHITE" layoutX="93.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="This is a question" textAlignment="CENTER">
+         <font>
+            <Font name="Josefin Sans Bold" size="60.0" />
+         </font>
+      </Text>
+      <Group layoutX="-26.0" layoutY="1.0">
+         <children>
+            <Rectangle arcHeight="30.0" arcWidth="30.0" fill="WHITE" height="67.0" layoutX="458.0" layoutY="109.0" stroke="#cb6969" strokeType="INSIDE" strokeWidth="3.0" width="66.0" />
+            <Rectangle arcHeight="30.0" arcWidth="30.0" fill="WHITE" height="67.0" layoutX="194.0" layoutY="109.0" stroke="#cb6969" strokeType="INSIDE" strokeWidth="3.0" width="66.0" />
+            <Rectangle arcHeight="30.0" arcWidth="30.0" fill="WHITE" height="67.0" layoutX="260.0" layoutY="109.0" stroke="#cb6969" strokeType="INSIDE" strokeWidth="3.0" width="66.0" />
+            <Rectangle arcHeight="30.0" arcWidth="30.0" fill="WHITE" height="67.0" layoutX="128.0" layoutY="109.0" stroke="#cb6969" strokeType="INSIDE" strokeWidth="3.0" width="66.0" />
+            <Rectangle arcHeight="30.0" arcWidth="30.0" fill="WHITE" height="67.0" layoutX="392.0" layoutY="109.0" stroke="#cb6969" strokeType="INSIDE" strokeWidth="3.0" width="66.0" />
+            <Rectangle arcHeight="30.0" arcWidth="30.0" fill="WHITE" height="67.0" layoutX="326.0" layoutY="109.0" stroke="#cb6969" strokeType="INSIDE" strokeWidth="3.0" width="66.0" />
+         </children>
+      </Group>
+      <Group>
+         <children>
+            <Text fill="WHITE" layoutX="133.0" layoutY="310.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E">
+               <font>
+                  <Font name="Nunito Sans Regular" size="19.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="200.0" layoutY="311.0" strokeType="OUTSIDE" strokeWidth="0.0" text="H">
+               <font>
+                  <Font name="Nunito Sans Regular" size="19.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="62.0" layoutY="310.0" strokeType="OUTSIDE" strokeWidth="0.0" text="B">
+               <font>
+                  <Font name="Nunito Sans Regular" size="19.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="155.0" layoutY="310.0" strokeType="OUTSIDE" strokeWidth="0.0" text="F">
+               <font>
+                  <Font name="Nunito Sans Regular" size="19.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="221.0" layoutY="311.0" strokeType="OUTSIDE" strokeWidth="0.0" text="J">
+               <font>
+                  <Font name="Nunito Sans Regular" size="19.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="178.0" layoutY="311.0" strokeType="OUTSIDE" strokeWidth="0.0" text="G">
+               <font>
+                  <Font name="Nunito Sans Regular" size="19.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="86.0" layoutY="310.0" strokeType="OUTSIDE" strokeWidth="0.0" text="C">
+               <font>
+                  <Font name="Nunito Sans Regular" size="19.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="37.0" layoutY="311.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A">
+               <font>
+                  <Font name="Nunito Sans Regular" size="19.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="110.0" layoutY="310.0" strokeType="OUTSIDE" strokeWidth="0.0" text="D">
+               <font>
+                  <Font name="Nunito Sans Regular" size="19.0" />
+               </font>
+            </Text>
+         </children>
+      </Group>
+      <Group layoutY="58.0">
+         <children>
+            <Text fill="WHITE" layoutX="125.0" layoutY="309.0" strokeType="OUTSIDE" strokeWidth="0.0" text="W">
+               <font>
+                  <Font name="Nunito Sans Regular" size="19.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="103.0" layoutY="310.0" strokeType="OUTSIDE" strokeWidth="0.0" text="V">
+               <font>
+                  <Font name="Nunito Sans Regular" size="19.0" />
+               </font>
+            </Text>
+         </children>
+      </Group>
+      <Group layoutY="29.0">
+         <children>
+            <Text fill="WHITE" layoutX="133.0" layoutY="310.0" strokeType="OUTSIDE" strokeWidth="0.0" text="O">
+               <font>
+                  <Font name="Nunito Sans Regular" size="19.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="200.0" layoutY="311.0" strokeType="OUTSIDE" strokeWidth="0.0" text="R">
+               <font>
+                  <Font name="Nunito Sans Regular" size="19.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="62.0" layoutY="310.0" strokeType="OUTSIDE" strokeWidth="0.0" text="L">
+               <font>
+                  <Font name="Nunito Sans Regular" size="19.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="155.0" layoutY="310.0" strokeType="OUTSIDE" strokeWidth="0.0" text="P">
+               <font>
+                  <Font name="Nunito Sans Regular" size="19.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="221.0" layoutY="311.0" strokeType="OUTSIDE" strokeWidth="0.0" text="S">
+               <font>
+                  <Font name="Nunito Sans Regular" size="19.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="178.0" layoutY="311.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Q">
+               <font>
+                  <Font name="Nunito Sans Regular" size="19.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="86.0" layoutY="310.0" strokeType="OUTSIDE" strokeWidth="0.0" text="M">
+               <font>
+                  <Font name="Nunito Sans Regular" size="19.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="37.0" layoutY="311.0" strokeType="OUTSIDE" strokeWidth="0.0" text="K">
+               <font>
+                  <Font name="Nunito Sans Regular" size="19.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="110.0" layoutY="310.0" strokeType="OUTSIDE" strokeWidth="0.0" text="N">
+               <font>
+                  <Font name="Nunito Sans Regular" size="19.0" />
+               </font>
+            </Text>
+         </children>
+      </Group>
+      <Group layoutY="-14.0">
+         <children>
+            <Text fill="WHITE" layoutX="532.0" layoutY="295.0" strokeType="OUTSIDE" strokeWidth="0.0" text="100" translateY="2.0">
+               <font>
+                  <Font name="Josefin Sans Bold" size="23.0" />
+               </font>
+            </Text>
+            <Text fill="#a2de86" layoutX="437.0" layoutY="297.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Player 1">
+               <font>
+                  <Font name="Josefin Sans Bold" size="23.0" />
+               </font>
+            </Text>
+         </children>
+      </Group>
+      <Group layoutY="15.0">
+         <children>
+            <Text fill="WHITE" layoutX="532.0" layoutY="295.0" strokeType="OUTSIDE" strokeWidth="0.0" text="100" translateY="2.0">
+               <font>
+                  <Font name="Josefin Sans Bold" size="23.0" />
+               </font>
+            </Text>
+            <Text fill="#a2de86" layoutX="437.0" layoutY="297.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Player 1">
+               <font>
+                  <Font name="Josefin Sans Bold" size="23.0" />
+               </font>
+            </Text>
+         </children>
+      </Group>
+      <Group layoutY="44.0">
+         <children>
+            <Text fill="WHITE" layoutX="532.0" layoutY="295.0" strokeType="OUTSIDE" strokeWidth="0.0" text="100" translateY="2.0">
+               <font>
+                  <Font name="Josefin Sans Bold" size="23.0" />
+               </font>
+            </Text>
+            <Text fill="#a2de86" layoutX="437.0" layoutY="297.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Player 1">
+               <font>
+                  <Font name="Josefin Sans Bold" size="23.0" />
+               </font>
+            </Text>
+         </children>
+      </Group>
+      <Group layoutY="73.0">
+         <children>
+            <Text fill="WHITE" layoutX="532.0" layoutY="295.0" strokeType="OUTSIDE" strokeWidth="0.0" text="100" translateY="2.0">
+               <font>
+                  <Font name="Josefin Sans Bold" size="23.0" />
+               </font>
+            </Text>
+            <Text fill="#a2de86" layoutX="437.0" layoutY="297.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Player 1">
+               <font>
+                  <Font name="Josefin Sans Bold" size="23.0" />
+               </font>
+            </Text>
+         </children>
+      </Group>
+      <ImageView fitHeight="29.0" fitWidth="26.0" layoutX="342.0" layoutY="291.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/star.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="29.0" fitWidth="26.0" layoutX="342.0" layoutY="334.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/love.png" />
+         </image>
+      </ImageView>
+      <Text fill="WHITE" layoutX="368.0" layoutY="311.0" strokeType="OUTSIDE" strokeWidth="0.0" text="100">
+         <font>
+            <Font name="Nunito Sans Regular" size="19.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="371.0" layoutY="353.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2/5">
+         <font>
+            <Font name="Nunito Sans Regular" size="19.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="60.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/hint.png" />
+         </image>
+      </ImageView>
+      <Text fill="WHITE" layoutX="204.0" layoutY="368.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Z">
+         <font>
+            <Font name="Nunito Sans Regular" size="19.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="56.0" layoutY="368.0" strokeType="OUTSIDE" strokeWidth="0.0" text="T">
+         <font>
+            <Font name="Nunito Sans Regular" size="19.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="80.0" layoutY="369.0" strokeType="OUTSIDE" strokeWidth="0.0" text="U">
+         <font>
+            <Font name="Nunito Sans Regular" size="19.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="180.0" layoutY="367.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Y">
+         <font>
+            <Font name="Nunito Sans Regular" size="19.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="155.0" layoutY="367.0" strokeType="OUTSIDE" strokeWidth="0.0" text="X">
+         <font>
+            <Font name="Nunito Sans Regular" size="19.0" />
+         </font>
+      </Text>
+      <Button layoutX="232.0" layoutY="200.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="136.0" style="-fx-background-color: #ebcf6b;" text="Guess now" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Josefin Sans Bold" size="20.0" />
+         </font>
+      </Button>
+      <Text fill="#cb6969" layoutX="529.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Time" wrappingWidth="56.00000000000003">
+         <font>
+            <Font name="Josefin Sans Bold" size="27.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

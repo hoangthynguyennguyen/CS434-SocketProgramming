@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #DE8686;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.HowToPlayController">
+   <children>
+      <Text layoutX="138.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="How to play">
+         <font>
+            <Font name="Josefin Sans Bold" size="60.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="28.0" layoutY="118.0" strokeType="OUTSIDE" strokeWidth="0.0" text="After the second set, you can start guessing the whole keyword. Guess correctly and get xx points." wrappingWidth="387.05999755859375">
+         <font>
+            <Font name="Nunito Sans SemiBold" size="20.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="28.0" layoutY="321.0" strokeType="OUTSIDE" strokeWidth="0.0" text="The player with the highest score wins!">
+         <font>
+            <Font name="Nunito Sans SemiBold" size="20.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="70.0" fitWidth="84.0" layoutX="11.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/rc.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="70.0" fitWidth="75.0" layoutX="11.0" layoutY="328.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/tri.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="95.0" fitWidth="139.0" layoutX="488.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/ccc.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="84.0" fitWidth="69.0" layoutX="562.0" layoutY="224.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/ab.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="256.0" fitWidth="131.0" layoutX="431.0" layoutY="123.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/square.png" />
+         </image>
+      </ImageView>
+      <Text fill="WHITE" layoutX="28.0" layoutY="215.0" strokeType="OUTSIDE" strokeWidth="0.0" text="The game ends when:">
+         <font>
+            <Font name="Nunito Sans SemiBold" size="20.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="28.0" layoutY="254.0" strokeType="OUTSIDE" strokeWidth="0.0" text="a. A player guessed the keyword">
+         <font>
+            <Font name="Nunito Sans SemiBold" size="20.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="28.0" layoutY="283.0" strokeType="OUTSIDE" strokeWidth="0.0" text="b. No player guessed the keyword after 5 sets">
+         <font>
+            <Font name="Nunito Sans SemiBold" size="20.0" />
+         </font>
+      </Text>
+      <Button layoutX="425.0" layoutY="320.0" onAction="#backToMenu" style="-fx-background-color: transparent;" text="Back" textFill="WHITE">
+         <font>
+            <Font name="Josefin Sans Bold" size="48.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

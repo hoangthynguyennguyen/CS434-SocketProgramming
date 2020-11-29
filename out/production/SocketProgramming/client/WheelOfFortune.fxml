@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.MenuController">
+   <children>
+      <Circle fill="WHITE" layoutX="466.0" layoutY="-55.0" radius="45.0" stroke="#de8282" strokeType="INSIDE" strokeWidth="10.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#a2de86" height="44.0" layoutX="443.0" layoutY="36.0" rotate="130.0" stroke="#a2de86" strokeType="INSIDE" width="46.0" />
+      <Polygon fill="#cb6969" layoutX="136.0" layoutY="194.0" rotate="350.0" stroke="#cb6969" strokeType="INSIDE">
+        <points>
+          <Double fx:value="-50.0" />
+          <Double fx:value="40.0" />
+          <Double fx:value="50.0" />
+          <Double fx:value="40.0" />
+          <Double fx:value="0.0" />
+          <Double fx:value="-60.0" />
+        </points>
+      </Polygon>
+      <Group layoutX="68.0" layoutY="32.0" AnchorPane.bottomAnchor="250.0" AnchorPane.leftAnchor="158.0" AnchorPane.rightAnchor="99.18496704101562" AnchorPane.topAnchor="83.72356414794922">
+         <children>
+            <Text fill="WHITE" layoutX="93.0" layoutY="102.0" opacity="0.5" smooth="false" stroke="BLACK" strokeType="OUTSIDE" text="MAGICAL" wrappingWidth="320.8150329589844" AnchorPane.rightAnchor="-71.0">
+               <font>
+                  <Font name="Josefin Sans Bold" size="64.0" />
+               </font>
+            </Text>
+            <Text fill="#ef5050" layoutX="86.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MAGICAL" translateX="4.0" wrappingWidth="342.8150329589844">
+               <font>
+                  <Font name="Josefin Sans Bold" size="64.0" />
+               </font>
+            </Text>
+         </children>
+      </Group>
+      <Group layoutX="-21.0" AnchorPane.leftAnchor="190.81497192382812" />
+      <Text fill="WHITE" layoutX="154.0" layoutY="199.0" opacity="0.39" stroke="BLACK" strokeType="OUTSIDE" text="WHEEL" wrappingWidth="275.9999694824219">
+         <font>
+            <Font name="Josefin Sans Bold" size="64.0" />
+         </font>
+      </Text>
+      <Text fill="#1c1b1b" layoutX="155.0" layoutY="206.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WHEEL" translateX="3.0" translateY="-5.0" wrappingWidth="243.81500244140625">
+         <font>
+            <Font name="Josefin Sans Bold" size="64.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="90.0" fitWidth="116.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/half.png" />
+         </image>
+      </ImageView>
+      <Group />
+      <ImageView fitHeight="116.0" fitWidth="103.0" layoutX="-7.0" layoutY="294.0" pickOnBounds="true" preserveRatio="true" x="7.0" y="-9.0">
+         <image>
+            <Image url="@../Images/â.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="90.0" fitWidth="134.0" layoutX="120.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true" translateY="1.0">
+         <image>
+            <Image url="@../Images/s.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="209.0" layoutY="242.0" mnemonicParsing="false" onAction="#registerAction" prefHeight="54.0" prefWidth="166.0" style="-fx-background-color: #ef5050;" text="Register" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Nunito Sans SemiBold" size="25.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="54.0" layoutX="225.0" layoutY="231.0" opacity="0.33" stroke="BLACK" strokeType="INSIDE" translateX="-8.0" translateY="3.0" width="166.0" />
+      <Circle fill="#86c4de" layoutX="90.0" layoutY="183.0" radius="22.0" stroke="#86c4de" strokeType="INSIDE" translateX="-3.0" />
+      <Polygon fill="WHITE" layoutX="430.0" layoutY="252.0" rotate="330.0" stroke="#86c4de" strokeType="INSIDE" strokeWidth="10.0">
+        <points>
+          <Double fx:value="-50.0" />
+          <Double fx:value="40.0" />
+          <Double fx:value="50.0" />
+          <Double fx:value="40.0" />
+          <Double fx:value="0.0" />
+          <Double fx:value="-60.0" />
+        </points>
+      </Polygon>
+      <ImageView fitHeight="150.0" fitWidth="128.0" layoutX="323.0" layoutY="-150.0" opacity="0.96" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/z.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="184.0" fitWidth="90.0" layoutX="504.0" layoutY="211.0" pickOnBounds="true" preserveRatio="true" x="6.0" y="5.0">
+         <image>
+            <Image url="@../Images/f.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="248.0" layoutY="318.0" onAction="#howToPlayAction" style="-fx-background-color: transparent;" text="Rules" translateX="3.0" translateY="3.0">
+         <font>
+            <Font name="Nunito Sans SemiBold" size="25.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+   </children>
+</AnchorPane>

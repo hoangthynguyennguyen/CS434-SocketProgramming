@@ -1,6 +1,8 @@
 package client;
 
+import java.io.IOException;
 import javafx.application.Platform;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,11 +11,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-import java.io.IOException;
-
-
 public class Controller {
-    String[] sceneNames = {"WheelOfFortune.fxml", "register.fxml", "Rules.fxml", "Rulecont.fxml", "Server.fxml"};
+    String[] sceneNames = {"WheelOFortune.fxml", "register.fxml", "Rules.fxml", "Rulecont.fxml", "Server.fxml"};
 
     // -----------------------------------------------------------------------------------
     private void goToSceneIndicator(int nextScene, ActionEvent event) throws IOException {
