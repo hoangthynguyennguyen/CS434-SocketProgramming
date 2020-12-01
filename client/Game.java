@@ -46,6 +46,12 @@ public class Game extends AnchorPane implements Initializable {
     }
 
     public void initPlayer(String host, int port, String clientName) {
+        this.question= new Text();
+        this.clientName= new Text();
+        this.currentScrore= new Text();
+        this.inputKeyword= new TextField();
+        this.inputCharacter= new TextField();
+        this.submitBtn= new Button();
         playerConnector = new PlayerConnector(clientName, host, port);
 //        this.clientName.setText(clientName);
     }
