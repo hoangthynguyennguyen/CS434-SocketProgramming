@@ -31,6 +31,19 @@ public class RootController {
         setScreen(pane);
     }
 
+    @FXML
+    public void loadGameScreen() throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Server.fxml"));
+        Pane pane = loader.load();
+        ServerController game = loader.getController();
+        game.setRootController(this);
+        setScreen(pane);
+    }
+
+    public void setOpacityForScreen(double opacity){
+        rootStackPane.setOpacity(opacity);
+    }
+
     public void setScreen(Pane pane) {
         rootStackPane.getChildren().clear();
         rootStackPane.getChildren().add(pane);

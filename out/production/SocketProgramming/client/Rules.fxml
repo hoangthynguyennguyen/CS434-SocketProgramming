@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<?import javafx.scene.control.Button?>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #DE8686;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.HowToPlayController">
+   <children>
+      <Text layoutX="148.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="How to play" textAlignment="CENTER">
+         <font>
+            <Font name="Josefin Sans Bold" size="60.0" />
+         </font>
+      </Text>
+      <Text fill="#ebcf6b" layoutX="114.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Objective: Be the first to answer the question.">
+         <font>
+            <Font name="Nunito Sans SemiBold" size="18.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="154.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You can guess a single letter from the answer. If correct, you get 1 point and continue. Otherwise, it’s the next player’s turn. " wrappingWidth="425.05999755859375">
+         <font>
+            <Font name="Nunito Sans SemiBold" size="20.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="155.0" layoutY="251.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A set is complete when the last player finishes their turn and move back to the first player. Each question has 5 sets." wrappingWidth="418.71807861328125">
+         <font>
+            <Font name="Nunito Sans SemiBold" size="20.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="103.0" fitWidth="102.0" layoutX="22.0" layoutY="140.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/ava.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="93.0" fitWidth="79.0" layoutX="31.0" layoutY="252.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/time.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="89.0" fitWidth="168.0" layoutX="376.0" layoutY="313.0" pickOnBounds="true" preserveRatio="true" translateY="3.0">
+         <image>
+            <Image url="@../Images/c.png" />
+         </image>
+      </ImageView>
+      <Button textFill="WHITE" layoutX="450.0" layoutY="300.0" text="Next" onAction="#getRuleCont"  style="-fx-background-color: transparent;">
+         <font>
+            <Font name="Josefin Sans Bold" size="48.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="67.0" fitWidth="102.0" layoutX="14.0" layoutY="333.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/aaaa.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="99.0" fitWidth="108.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" translateY="-5.0">
+         <image>
+            <Image url="@../Images/bb.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="93.0" fitWidth="108.0" layoutX="492.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/ccc.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
