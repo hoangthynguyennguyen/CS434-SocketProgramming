@@ -16,6 +16,6 @@
             <Font name="Josefin Sans Bold" size="20.0" />
          </font>
       </Text>
-      <Button fx:id="warningCloseButton" layoutX="26.0" layoutY="129.0" mnemonicParsing="false" onAction="#confirmOnAction" prefHeight="25.0" prefWidth="54.0" style="-fx-background-color: #CB6969;" text="OK" textAlignment="CENTER" textFill="WHITE" translateX="110.0" />
+      <Button fx:id="warningCloseButton" layoutX="26.0" layoutY="129.0" mnemonicParsing="false" onAction="#confirmOnAction" prefHeight="25.0" prefWidth="54.0"  style="-fx-background-color: #CB6969;" text="OK" textAlignment="CENTER" textFill="WHITE" translateX="110.0" />
    </children>
 </AnchorPane>

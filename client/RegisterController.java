@@ -65,6 +65,8 @@ public class RegisterController {
 //                warningStage.initModality(Modality.APPLICATION_MODAL);
                 warningStage.showAndWait();
             }
+
+
             rootController.setOpacityForScreen(0.6);
             waiting.setVisible(true);
             String name= nameField.getText();

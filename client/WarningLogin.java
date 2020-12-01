@@ -14,6 +14,7 @@ WarningLogin {
          RegisterController.setWarningStage((Stage) warningCloseButton.getScene().getWindow());
          RegisterController.getWarningStage().close();
 
+
     }
 
 }
