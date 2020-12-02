@@ -20,11 +20,13 @@ public class MainServer extends Thread {
     public static int numQuestions=4;
     private static int port=8000;
     public static ArrayList<Socket> socketArrayList;
-    public static ArrayList<String> names;
+    public static ArrayList<String> clients;
     public static ArrayList<Integer> points;
     public static ArrayList<Boolean> correctAnswer;
     public static ArrayList<Integer> wrongAnswer;
     public static ArrayList<Question> listQuestions;
+    public static DataInputStream dataInputStream;
+    public static DataOutputStream dataOutputStream;
     private static Question question;
     private static ServerSocket serverSocket;
     private static Random random;
@@ -33,7 +35,7 @@ public class MainServer extends Thread {
 
     public static void main(String[] args) throws IOException {
         MainServer.socketArrayList= new ArrayList<>();
-        MainServer.names= new ArrayList<>();
+        MainServer.clients= new ArrayList<>();
         MainServer.random= new Random();
         MainServer.socket= new Socket();
         MainServer.loadData();
@@ -46,16 +48,16 @@ public class MainServer extends Thread {
 
         while (true) {
                 MainServer.socket=MainServer.serverSocket.accept();
-                System.out.println("Client " + MainServer.socket);
+                System.out.println("Client "+MainServer.socket);
                 MainServer.socketArrayList.add(MainServer.socket);
 
-                DataInputStream dataInputStream = new DataInputStream(MainServer.socket.getInputStream());
-                DataOutputStream dataOutputStream = new DataOutputStream(MainServer.socket.getOutputStream());
+                MainServer.dataInputStream = new DataInputStream(MainServer.socket.getInputStream());
+                MainServer.dataOutputStream = new DataOutputStream(MainServer.socket.getOutputStream());
 
-                // get name
-                String name = dataInputStream.readUTF();
+                // Register client
+                String name = MainServer.dataInputStream.readUTF();
                 System.out.println(name + " is registered");
-                MainServer.names.add(name);
+                MainServer.clients.add(name);
 
                 if (MainServer.socketArrayList.size() == numOfPlayers) break;
         }
@@ -179,8 +181,8 @@ class HandleAnswer extends Thread {
             String keywordOfClient = dataInputStream.readUTF();
 
             try {
-                System.out.println("Character of " + MainServer.names.get(socketIndex) + " :" + characterOfClient);
-                System.out.println("Keyword of " + MainServer.names.get(socketIndex) + " :" + keywordOfClient);
+                System.out.println("Character of " + MainServer.clients.get(socketIndex) + " :" + characterOfClient);
+                System.out.println("Keyword of " + MainServer.clients.get(socketIndex) + " :" + keywordOfClient);
 
                 if (HandleAnswer.answer.contains(characterOfClient.substring(0,1))){
                     int val= MainServer.points.get(socketIndex);
@@ -200,12 +202,13 @@ class HandleAnswer extends Thread {
                 }
 
                 if (MainServer.correctAnswer.get(socketIndex)){
-                    System.out.println(MainServer.names.get(socketIndex) + " -> has correct answer and score "+ MainServer.points.get(socketIndex));
+                    System.out.println(MainServer.clients.get(socketIndex) + " -> has correct answer and score "+ MainServer.points.get(socketIndex));
                 }
-                
+
                 if (MainServer.wrongAnswer.get(socketIndex)>=1){
-                    System.out.println(MainServer.names.get(socketIndex)+ " -> has wrong answer "+ MainServer.wrongAnswer.get(socketIndex));
+                    System.out.println(MainServer.clients.get(socketIndex)+ " -> has wrong answer "+ MainServer.wrongAnswer.get(socketIndex));
                 }
+                System.out.println("Answer of question: "+HandleAnswer.answer);
             }
             catch (Exception e) {
                 System.out.println(e);
