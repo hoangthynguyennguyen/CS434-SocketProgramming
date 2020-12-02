@@ -35,7 +35,7 @@ public class RootController {
     public void loadGameScreen() throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Server.fxml"));
         Pane pane = loader.load();
-        ServerController serverController = loader.getController();
+        Game serverController = loader.getController();
         serverController.setRootController(this);
         setScreen(pane);
     }

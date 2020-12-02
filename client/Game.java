@@ -30,34 +30,37 @@ public class Game extends AnchorPane implements Initializable {
     @FXML
     private Button submitBtn;
 
+    @FXML
+    private RootController rootController;
+
     Scene scene;
 
-    public Game(){
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("Server.fxml"));
-//        loader.setRoot(this);
-//        loader.setController(this);
-//        scene = new Scene(this, 600, 400);
+//    public void initPlayer() {
+//        this.question= new Text();
+//        this.clientName= new Text();
+//        this.currentScrore= new Text();
+//        this.inputKeyword= new TextField();
+//        this.inputCharacter= new TextField();
+//        this.submitBtn= new Button();
+//        playerConnector = new PlayerConnector(clientName, host, port);
+//    }
 
-        try {
-            loader.load();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void initPlayer(String host, int port, String clientName) {
-        this.question= new Text();
-        this.clientName= new Text();
-        this.currentScrore= new Text();
-        this.inputKeyword= new TextField();
-        this.inputCharacter= new TextField();
-        this.submitBtn= new Button();
+    public void initGame1(String host, int port, String clientName){
         playerConnector = new PlayerConnector(clientName, host, port);
-//        this.clientName.setText(clientName);
     }
 
-    public void initGame(){
-        submitBtn.setOnAction(action->{
+    @FXML
+    public void setRootController(RootController rootController ) {
+
+        this.rootController = rootController;
+    }
+
+
+
+
+    public void initGame(String name){
+        System.out.println(this.clientName);
+        this.submitBtn.setOnAction(action->{
             String character=inputCharacter.getText();
             String keyword= inputKeyword.getText();
             playerConnector.submitAnswer(character, keyword);

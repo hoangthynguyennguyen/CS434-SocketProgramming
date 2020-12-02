@@ -72,7 +72,7 @@ public class RegisterController {
             String name= nameField.getText();
 
             new Thread(()->{
-                Main.gameScene.initPlayer("127.0.0.1", 8000, name);
+                Main.gameScene.initGame1("127.0.0.1", 8000, name);
                 isConnected= Main.gameScene.connectToServer();
                 latch.countDown();
             }).start();
@@ -88,9 +88,9 @@ public class RegisterController {
                     if (isConnected) {
                         rootController.setOpacityForScreen(1);
                         waiting.setVisible(false);
-                        Main.gameScene.initGame();
                         try {
                             rootController.loadGameScreen();
+                            Main.gameScene.initGame(name);
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
