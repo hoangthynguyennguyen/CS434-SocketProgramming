@@ -1,8 +1,10 @@
-python
-pythonpythonpythonpythonpythonpythonpythonpython
-java
-javajavajavajavajavajavajavajavajavajavajavajavajava
-rubyonrail
-rubyonrailrubyonrailrubyonrailrubyonrailrubyonrail
-golang
-golanggolanggolanggolanggolanggolanggolang
+Lewis Hamilton
+Who is a winner in the Belgian Grand Prix in 2020?
+Honda
+Who makes F1 engines for Red Bull in 2020?
+Monza
+What is the easiest F1 track?
+Suzuka
+Which is the toughest track found in Formula F1?
+Mercedes
+Who is the best Team Of Year in F1 Racing Teams 2020?
