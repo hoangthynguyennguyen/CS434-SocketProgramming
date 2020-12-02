@@ -1,6 +1,7 @@
 package client;
 
 import javafx.application.Platform;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -18,9 +19,9 @@ import java.net.URL;
 import java.net.UnknownHostException;
 import java.util.ResourceBundle;
 
-public class Game extends AnchorPane implements Initializable {
-    public PlayerConnector playerConnector;
-
+public class Game {
+    private RootController rootController;
+    public static Thread thread;
     @FXML
     private Text question, clientName, currentScrore;
 
@@ -30,158 +31,39 @@ public class Game extends AnchorPane implements Initializable {
     @FXML
     private Button submitBtn;
 
-    @FXML
-    private RootController rootController;
-
-    Scene scene;
-
-//    public void initPlayer() {
-//        this.question= new Text();
-//        this.clientName= new Text();
-//        this.currentScrore= new Text();
-//        this.inputKeyword= new TextField();
-//        this.inputCharacter= new TextField();
-//        this.submitBtn= new Button();
-//        playerConnector = new PlayerConnector(clientName, host, port);
-//    }
-
-    public void initGame1(String host, int port, String clientName){
-        playerConnector = new PlayerConnector(clientName, host, port);
-    }
-
-    @FXML
-    public void setRootController(RootController rootController ) {
-
+    public void setRootController(RootController rootController) {
         this.rootController = rootController;
     }
 
+    public Game(){
+        thread=new Thread(()->{
+            try {
+                    String questionFromServer= null;
+                    questionFromServer = Main.dataInputStream.readUTF();
+                    String status = questionFromServer.split(" ")[0];
+                    System.out.println("Question sends from server "+ questionFromServer);
 
-
-
-    public void initGame(String name){
-        System.out.println(this.clientName);
-        this.submitBtn.setOnAction(action->{
-            String character=inputCharacter.getText();
-            String keyword= inputKeyword.getText();
-            playerConnector.submitAnswer(character, keyword);
+                    if (status.equals("Question:")){
+                        this.clientName.setText(Main.clientName);
+                        this.question.setText(questionFromServer.split(" ")[1]);
+                    }
+                    else if (status.equals("Score")){
+                        System.out.println( questionFromServer.split(" ")[1]);
+                    }
+            }catch (IOException e) {
+                e.printStackTrace();
+            }
         });
+        thread.start();
     }
 
-    public boolean connectToServer(){
-        return playerConnector.connectToServer();
+    @FXML
+    public void handleSubmitAnswer(ActionEvent actionEvent) throws IOException {
+        String character= inputCharacter.getText();
+        String keyword= inputKeyword.getText();
+        System.out.println("Character from client: "+ character);
+        System.out.println("Keyword from client: "+ keyword);
+        Main.dataOutputStream.writeUTF(keyword);
     }
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        System.out.println("Game Initialized");
-    }
-
-    public class PlayerConnector implements Runnable {
-        Socket socket;
-        Thread thread;
-        DataInputStream inputStream;
-        DataOutputStream outputStream;
-
-        String userName;
-        String host;
-        int port;
-
-        String score;
-        String questionServer;
-
-
-        public PlayerConnector(String clientName, String host, int port) {
-            this.host = host;
-            this.port = port;
-            this.userName = clientName;
-        }
-
-        public boolean connectToServer() {
-            try {
-                System.out.println(userName);
-                socket = new Socket(host, port);
-                System.out.println("client is connected to " + host + " port " + port + "...");
-                inputStream = new DataInputStream(socket.getInputStream());
-                outputStream = new DataOutputStream(socket.getOutputStream());
-
-                outputStream.writeUTF(userName);
-                String info = this.inputStream.readUTF();
-
-                thread = new Thread(this);
-                thread.start();
-
-                String status = info.split(" ")[0];
-
-                if (status.equals("successful")) {
-                    System.out.println(userName + " logged in successfully");
-                    return true;
-                }
-
-                System.out.println("Logged in failed");
-                return false;
-            } catch (UnknownHostException e) {
-                System.out.println("Logged in failed");
-                e.printStackTrace();
-                return false;
-            } catch (IOException e) {
-                System.out.println("Logged in failed");
-                e.printStackTrace();
-                return false;
-            }
-        }
-
-        public boolean updateScore() {
-            try {
-                score = this.inputStream.readUTF();
-                System.out.println(score);
-                return true;
-            } catch (NumberFormatException | IOException e) {
-                e.printStackTrace();
-                return false;
-            }
-        }
-
-        public boolean updateQuestion() {
-            try {
-                questionServer = this.inputStream.readUTF();
-                System.out.println(questionServer);
-                return true;
-            } catch (IOException e) {
-                e.printStackTrace();
-                return false;
-            }
-        }
-
-        public String getCurrentScore() {
-            return score;
-        }
-
-        public String getCurrentQuestion() {
-            return questionServer;
-        }
-
-        public void submitAnswer(String character, String keyword) {
-            try {
-                this.outputStream.writeUTF(character);
-                this.outputStream.writeUTF(keyword);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-
-        @Override
-        public void run() {
-            while (thread != null) {
-                System.out.println("Run...");
-                if (updateScore() && updateQuestion()) {
-                    Platform.runLater(() -> {
-                        inputCharacter.clear();
-                        inputKeyword.clear();
-                        currentScrore.setText(getCurrentScore());
-                        question.setText(getCurrentQuestion());
-                    });
-                }
-            }
-        }
-    }
 }
