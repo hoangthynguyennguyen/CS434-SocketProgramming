@@ -38,18 +38,20 @@ public class Game {
     public Game(){
         thread=new Thread(()->{
             try {
-                    String questionFromServer= null;
-                    questionFromServer = Main.dataInputStream.readUTF();
-                    String status = questionFromServer.split(" ")[0];
+//                    String scoreFromServer= Main.dataInputStream.readUTF();
+                    String questionFromServer = Main.dataInputStream.readUTF();
+                    String statusQuestion = questionFromServer.split(" ")[0];
+//                    String statusScore = scoreFromServer.split(" ")[0];
                     System.out.println("Question sends from server "+ questionFromServer);
+//                    System.out.println("Score sends from server "+ scoreFromServer);
 
-                    if (status.equals("Question:")){
+                    if (statusQuestion.equals("Question:")){
                         this.clientName.setText(Main.clientName);
                         this.question.setText(questionFromServer.split(" ")[1]);
                     }
-                    else if (status.equals("Score")){
-                        System.out.println( questionFromServer.split(" ")[1]);
-                    }
+//                    else if (statusScore.equals("Score")){
+//                        System.out.println(scoreFromServer.split(" ")[1]);
+//                    }
             }catch (IOException e) {
                 e.printStackTrace();
             }
@@ -63,6 +65,7 @@ public class Game {
         String keyword= inputKeyword.getText();
         System.out.println("Character from client: "+ character);
         System.out.println("Keyword from client: "+ keyword);
+        Main.dataOutputStream.writeUTF(character);
         Main.dataOutputStream.writeUTF(keyword);
     }
 

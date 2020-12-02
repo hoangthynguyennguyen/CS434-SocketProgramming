@@ -22,10 +22,8 @@ public class MainServer extends Thread {
     public static ArrayList<Socket> socketArrayList;
     public static ArrayList<String> names;
     public static ArrayList<Integer> points;
-    public static ArrayList<Boolean> receivedAnsCorrect;
-    public static ArrayList<Integer> wrongAnsCount;
-    public static ArrayList<Socket> firstSocket;
-    public static int timeout=8000;
+    public static ArrayList<Boolean> correctAnswer;
+    public static ArrayList<Integer> wrongAnswer;
     public static ArrayList<Question> listQuestions;
     private static Question question;
     private static ServerSocket serverSocket;
@@ -45,10 +43,8 @@ public class MainServer extends Thread {
             MainServer.serverSocket= new ServerSocket(MainServer.port);
             System.out.println("Server is running on port "+port);
         }
-        int currentQuestion=0;
-//        while (currentQuestion < MainServer.numQuestions) {
-            while (true) {
-//                Socket socket = MainServer.serverSocket.accept();
+
+        while (true) {
                 MainServer.socket=MainServer.serverSocket.accept();
                 System.out.println("Client " + MainServer.socket);
                 MainServer.socketArrayList.add(MainServer.socket);
@@ -62,49 +58,35 @@ public class MainServer extends Thread {
                 MainServer.names.add(name);
 
                 if (MainServer.socketArrayList.size() == numOfPlayers) break;
-            }
+        }
 
             MainServer.points = new ArrayList<>();
-            MainServer.wrongAnsCount = new ArrayList<>();
+            MainServer.wrongAnswer = new ArrayList<>();
             for (int i = 0; i < MainServer.numOfPlayers; i++) {
                 MainServer.points.add(0);
-                MainServer.wrongAnsCount.add(0);
-                DataOutputStream dataOutputStream= new DataOutputStream(MainServer.socket.getOutputStream());
-                dataOutputStream.writeUTF("Score "+MainServer.points.get(i));
+                MainServer.wrongAnswer.add(0);
+//                DataOutputStream dataOutputStream= new DataOutputStream(MainServer.socket.getOutputStream());
+//                dataOutputStream.writeUTF("Score "+MainServer.points.get(i));
             }
             System.out.println(MainServer.points);
             MainServer.writeToClient();
 
-            MainServer.firstSocket = new ArrayList<>();
-            MainServer.receivedAnsCorrect = new ArrayList<>();
+            MainServer.correctAnswer = new ArrayList<>();
 
             for (int i = 0; i < MainServer.numOfPlayers; ++i) {
-                MainServer.receivedAnsCorrect.add(false);
+                MainServer.correctAnswer.add(false);
             }
 
 
             for (Socket item : MainServer.socketArrayList) {
-                ReadAnswer readAnswer = new ReadAnswer(item, MainServer.question.getKeyword());
-                readAnswer.start();
+                HandleAnswer handleAnswer = new HandleAnswer(item, MainServer.question.getKeyword());
+                handleAnswer.start();
             }
 
             MainServer.handleGame();
-//            currentQuestion++;
-//        }
     }
 
     public static void writeToClient() throws IOException {
-            boolean endGame = false;
-            int j = 0;
-            for (int point : MainServer.points) {
-                if (point >= MainServer.numQuestions) {
-                    endGame = true;
-                    System.out.println("Winner is " + MainServer.names.get(j));
-                    break;
-                }
-                j++;
-            }
-
             int randomNum=  MainServer.random.nextInt(MainServer.listQuestions.size());
             MainServer.question= MainServer.listQuestions.get(randomNum);
 
@@ -140,30 +122,27 @@ public class MainServer extends Thread {
 
     // Nobody answer correct
     public static void handleNobodyAnswerCorrect(){
-        if (MainServer.firstSocket.isEmpty()){
             System.out.println("Wrong all");
             for (int i=0; i< MainServer.socketArrayList.size(); i++){
-                MainServer.wrongAnsCount.set(i, MainServer.wrongAnsCount.get(i)+1);
+                MainServer.wrongAnswer.set(i, MainServer.wrongAnswer.get(i)+1);
                 if (MainServer.points.get(i)>1){
                     int val= MainServer.points.get(i);
                     val=val-1;
                     MainServer.points.set(i, val);
                 }
             }
-        }
     }
 
     private static void handleClientCorrect() {
-//        int firstSocketIndex = MainServer.socketArrayList.indexOf(MainServer.firstSocket.get(0));
         int wrongAnsN = 0;
         for (int i=0; i<MainServer.socketArrayList.size(); ++i) {
-            if (MainServer.receivedAnsCorrect.get(i)) {
+            if (MainServer.correctAnswer.get(i)) {
                 int val = MainServer.points.get(i);
                 System.out.println(val);
                 val++;
                 MainServer.points.set(i, val);
             }
-            else if (!MainServer.receivedAnsCorrect.get(i)) {
+            else if (!MainServer.correctAnswer.get(i)) {
                 if (MainServer.points.get(i) > 1) {
                     int val = MainServer.points.get(i);
                     System.out.println(val);
@@ -175,17 +154,16 @@ public class MainServer extends Thread {
             }
         }
         if (wrongAnsN == 0) wrongAnsN = 2;
-//        MainServer.points.set(firstSocketIndex, MainServer.points.get(firstSocketIndex) + wrongAnsN);
 //        System.out.println(MainServer.points);
     }
 }
 
-class ReadAnswer extends Thread {
+class HandleAnswer extends Thread {
     private Socket socket;
     public static String answer;
 
 
-    public ReadAnswer(Socket socket, String answer) {
+    public HandleAnswer(Socket socket, String answer) {
         this.socket = socket;
         this.answer = answer;
     }
@@ -195,43 +173,48 @@ class ReadAnswer extends Thread {
     public void run() {
         try {
             int socketIndex = MainServer.socketArrayList.indexOf(socket);
-            System.out.println("Socket index is: " + socketIndex);
-            DataInputStream dis = new DataInputStream(socket.getInputStream());
+            DataInputStream dataInputStream = new DataInputStream(socket.getInputStream());
 
-            String resultOfClient = dis.readUTF();
-            System.out.println(resultOfClient);
+            String characterOfClient = dataInputStream.readUTF();
+            String keywordOfClient = dataInputStream.readUTF();
 
             try {
-                System.out.println("Ket qua cua " + MainServer.names.get(socketIndex) + " :" + resultOfClient);
+                System.out.println("Character of " + MainServer.names.get(socketIndex) + " :" + characterOfClient);
+                System.out.println("Keyword of " + MainServer.names.get(socketIndex) + " :" + keywordOfClient);
 
-                if (resultOfClient.equals(ReadAnswer.answer) && MainServer.firstSocket.isEmpty()) {
+                if (HandleAnswer.answer.contains(characterOfClient.substring(0,1))){
                     int val= MainServer.points.get(socketIndex);
                     val++;
                     MainServer.points.set(socketIndex, val);
-                    MainServer.receivedAnsCorrect.set(socketIndex, true);
-                    MainServer.firstSocket.add(socket);
-                    MainServer.wrongAnsCount.set(socketIndex, 0);
-                } else if (resultOfClient.equals(ReadAnswer.answer)) {
-                    MainServer.receivedAnsCorrect.set(socketIndex, true);
-                    MainServer.wrongAnsCount.set(socketIndex, 0);
+                    MainServer.correctAnswer.set(socketIndex, true);
+                    MainServer.wrongAnswer.set(socketIndex, 0);
+                }
+                if (keywordOfClient.equals(HandleAnswer.answer)) {
+                    int val= MainServer.points.get(socketIndex);
+                    val+=5;
+                    MainServer.points.set(socketIndex, val);
+                    MainServer.correctAnswer.set(socketIndex, true);
+                    MainServer.wrongAnswer.set(socketIndex, 0);
                 } else {
-                    MainServer.wrongAnsCount.set(socketIndex, MainServer.wrongAnsCount.get(socketIndex) + 1);
+                    MainServer.wrongAnswer.set(socketIndex, MainServer.wrongAnswer.get(socketIndex) + 1);
                 }
 
-                System.out.println(MainServer.names.get(socketIndex) + ": receivedAnsCorrect: " + MainServer.receivedAnsCorrect.get(socketIndex) + " score"+ MainServer.points.get(socketIndex));
-                System.out.println(MainServer.names.get(socketIndex) + ": wrongAnsCount: " + MainServer.wrongAnsCount.get(socketIndex));
+                if (MainServer.correctAnswer.get(socketIndex)){
+                    System.out.println(MainServer.names.get(socketIndex) + " -> has correct answer and score "+ MainServer.points.get(socketIndex));
+                }
+                
+                if (MainServer.wrongAnswer.get(socketIndex)>=1){
+                    System.out.println(MainServer.names.get(socketIndex)+ " -> has wrong answer "+ MainServer.wrongAnswer.get(socketIndex));
+                }
             }
             catch (Exception e) {
-                MainServer.wrongAnsCount.set(socketIndex, MainServer.wrongAnsCount.get(socketIndex) + 1);
-                System.out.println(MainServer.names.get(socketIndex) + ": receivedAnsCorrect: " + MainServer.receivedAnsCorrect.get(socketIndex));
-                System.out.println(MainServer.names.get(socketIndex) + ": wrongAnsCount: " + MainServer.wrongAnsCount.get(socketIndex));
+                System.out.println(e);
             }
-
         } catch (Exception e) {
             try {
                 socket.close();
             } catch (IOException ex) {
-                System.out.println("End connection");
+                System.out.println("End connection ---> Bye...");
             }
         }
     }
